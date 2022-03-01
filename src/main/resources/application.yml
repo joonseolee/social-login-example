@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    include: oauth
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: root
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        formal-sql: true
+        show-sql: true
+    hibernate:
+      ddl-auto: create
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            scope: profile, email
+test:
+  sample:
+    username: babo
+    password: dfdfqq11
+    own-names:
+      - dfkldf
+      - qqkkccc
+      - vvbbb
