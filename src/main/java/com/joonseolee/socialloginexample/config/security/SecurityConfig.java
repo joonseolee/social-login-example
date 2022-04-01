@@ -23,6 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
                 .antMatchers("/api/v1/**").hasRole(RoleType.USER.name())
+                .antMatchers("/redirect").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .logout()
