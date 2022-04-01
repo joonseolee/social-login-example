@@ -46,8 +46,8 @@ public class BaseController {
         return "youtube";
     }
 
-//    @GetMapping("/redirect")
-//    public String redirect() {
-//        return "redirect";
-//    }
+    @GetMapping("/welcome")
+    public String redirect() {
+        return "welcome";
+    }
 }
