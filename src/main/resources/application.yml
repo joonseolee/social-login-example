@@ -19,7 +19,7 @@ spring:
       client:
         registration:
           google:
-            client-id: 
+            client-id:
             client-secret:
             scope: profile, email, https://www.googleapis.com/auth/youtube
           naver:
@@ -37,6 +37,10 @@ spring:
             authorization-grant-type: authorization_code
             scope: profile_nickname, profile_image, account_email
             client-name: kakao
+          github:
+            client-id:
+            client-secret:
+            scope: user
         provider:
           naver:
             authorization-uri: https://nid.naver.com/oauth2.0/authorize

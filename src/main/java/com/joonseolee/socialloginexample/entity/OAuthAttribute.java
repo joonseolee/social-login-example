@@ -24,6 +24,9 @@ public class OAuthAttribute {
     }
 
     public static OAuthAttribute of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
+        if ("github".equals(registrationId)) {
+            return ofGithub("id", attributes);
+        }
         if ("kakao".equals(registrationId)) {
             return ofKakao("id", attributes);
         }
@@ -31,6 +34,16 @@ public class OAuthAttribute {
             return ofNaver("id", attributes);
         }
         return ofGoogle(userNameAttributeName, attributes);
+    }
+
+    private static OAuthAttribute ofGithub(String id, Map<String, Object> attributes) {
+        return OAuthAttribute.builder()
+                .name((String) attributes.get("name"))
+                .email((String) attributes.get("email"))
+                .picture((String) attributes.get("avatar_url"))
+                .attributes(attributes)
+                .nameAttributeKey(id)
+                .build();
     }
 
     private static OAuthAttribute ofKakao(String id, Map<String, Object> attributes) {

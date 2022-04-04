@@ -4,9 +4,17 @@
 
 * [x] Google
 * [x] Naver
-* [ ] Kakao
+* [x] Kakao
 * [ ] apple
-* [ ] github
+* [x] github
+* [ ] facebook
+* [ ] payco
+
+
+## Github
+
+github 는 이상하게 `email` 주소가 `null` 로 오는 이슈 발생.   
+해결 예정
 
 ***
 
