@@ -1,5 +1,6 @@
 package com.joonseolee.socialloginexample.entity;
 
+import com.joonseolee.socialloginexample.config.security.SocialAuthenticationType;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -23,17 +24,19 @@ public class OAuthAttribute {
         this.picture = picture;
     }
 
-    public static OAuthAttribute of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
-        if ("github".equals(registrationId)) {
-            return ofGithub("id", attributes);
+    public static OAuthAttribute of(SocialAuthenticationType registrationId, String userNameAttributeName, Map<String, Object> attributes) {
+        switch (registrationId) {
+            case GITHUB:
+                return ofGithub("id", attributes);
+            case KAKAO:
+                return ofKakao("id", attributes);
+            case NAVER:
+                return ofNaver("id", attributes);
+            case GOOGLE:
+                return ofGoogle(userNameAttributeName, attributes);
+            default:
+                throw new RuntimeException("not matched registration id");
         }
-        if ("kakao".equals(registrationId)) {
-            return ofKakao("id", attributes);
-        }
-        if ("naver".equals(registrationId)) {
-            return ofNaver("id", attributes);
-        }
-        return ofGoogle(userNameAttributeName, attributes);
     }
 
     private static OAuthAttribute ofGithub(String id, Map<String, Object> attributes) {
