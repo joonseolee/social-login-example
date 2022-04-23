@@ -7,7 +7,7 @@
 * [x] Kakao
 * [ ] apple
 * [x] github
-* [ ] facebook
+* [x] facebook
 * [ ] payco
 
 
