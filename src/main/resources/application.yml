@@ -41,6 +41,10 @@ spring:
             client-id:
             client-secret:
             scope: user
+          facebook:
+            client-id:
+            client-secret:
+            scope: public_profile, email
         provider:
           naver:
             authorization-uri: https://nid.naver.com/oauth2.0/authorize

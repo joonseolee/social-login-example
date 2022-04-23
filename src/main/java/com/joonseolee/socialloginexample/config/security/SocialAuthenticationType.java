@@ -15,7 +15,7 @@ public enum SocialAuthenticationType {
 
     public static SocialAuthenticationType getByName(String registrationId) {
         List<SocialAuthenticationType> names = Arrays.stream(values())
-                .filter(it -> it.name().equalsIgnoreCase(registrationId))
+                .filter(it -> registrationId.toLowerCase().contains(it.name().toLowerCase()))
                 .collect(Collectors.toList());
 
         if (names.isEmpty())
