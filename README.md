@@ -29,6 +29,9 @@ https://api.github.com/user/emails
 페이코는 이상하게 `url` 등록하는데 유효한 `url`을 입력해달라고 에러가 계속 나온다.  
 그것을 찾아보기전까지는 보류해야할듯.
 
+## Apple
+
+
 ***
 
 ## 출처
